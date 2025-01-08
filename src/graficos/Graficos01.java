@@ -66,10 +66,17 @@ public class Graficos01 {
     }
 
     public byte tamanoGrafico() {
-        System.out.print("Introduce el tamaño del gráfico (entre 1 y 50): ");
-
-        return ScannerUtils.readByte();
+        byte size;
+        do {
+            System.out.print("Introduce el tamaño del gráfico (entre 1 y 50): ");
+            size = ScannerUtils.readByte();
+            if (size < 1 || size > 50) {
+                System.out.print("Error. Intente de nuevo: ");
+            }
+        } while (size < 1 || size > 50);
+        return size;
     }
+
 
     public char charGrafico() {
         System.out.print("Enter char: ");
@@ -130,7 +137,7 @@ public class Graficos01 {
             for (int j = 0; j < lines - i; j++) {
                 graphic += " ";
             }
-            // Bucle triángulo - intercalado
+            // Bucle triángulo - alineación centrado
             for (int k = 0; k <= i; k++) {
                 graphic += c + " ";
             }
