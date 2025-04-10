@@ -68,7 +68,7 @@ public class Student {
 
     public String sleeping() {
         if (!state.equals("Sleeping")) {
-            this.state = "Sleeping";
+            setState("Sleeping");
         } else {
             return "I am already sleep...";
         }
